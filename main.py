@@ -11,6 +11,9 @@ def answer_question():
     question = data.get('question')
     url = data.get('url')
     openai_api_key = "YOUR_OPENAI_API_KEY_HERE"  # Replace with your actual OpenAI API key
+
+    if not openai_api_key:
+        return jsonify({'error': 'OpenAI API key is required!'}), 400
     
     # Call the webpage_chat function to get the answer
     answer = webpage_chat(question, url, openai_api_key)
