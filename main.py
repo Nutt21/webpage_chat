@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 
 #Endpoint
+@app.route('/answer', methods=['POST'])
 def answer_question():
     data = request.get_json()
     question = data.get('question')
