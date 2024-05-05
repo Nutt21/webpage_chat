@@ -10,8 +10,8 @@ def answer_question():
     data = request.get_json()
     question = data.get('question')
     url = data.get('url')
-    openai_api_key = "YOUR_OPENAI_API_KEY_HERE"  # Replace with your actual OpenAI API key
-
+    openai_api_key = data.get('openai_api_key')
+    
     if not openai_api_key:
         return jsonify({'error': 'OpenAI API key is required!'}), 400
     
