@@ -24,7 +24,7 @@ def webpage_chat(question, url, openai_api_key):
     vectordb = Chroma.from_documents(documents=docs, embedding=embedding, persist_directory=persist_directory)
     
     # Similarity search
-    context = vectordb.similarity_search(question,k=3)
+    context = vectordb.similarity_search(question,k=2)
     # context_1 = "\n".join(result["text"] for result in context_results)
     print(context)
 
